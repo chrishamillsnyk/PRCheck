@@ -59,4 +59,4 @@ jobs:
       run: |
         ls -la "${{ github.workspace }}"
         chmod +x "${{ github.workspace }}/snyk-pr-diff-amd64-linux"
-        ${{ github.workspace }}/.github/snyk-pr-diff-amd64-linux code ${{ github.workspace }}/snyk_code_baseline.json ${{ github.workspace }}/snyk_code_pr.json
+        ${{ github.workspace }}/snyk-pr-diff-amd64-linux code ${{ github.workspace }}/snyk_code_baseline.json ${{ github.workspace }}/snyk_code_pr.json
