@@ -24,7 +24,7 @@ jobs:
     - name: Authenticate Snyk
       run: snyk auth ${SNYK_TOKEN}
 
-    - name: Run Snyk Code
+    - name: Run Snyk Code baseline
       run: snyk code test --json-file-output=${{ github.workspace }}/snyk_code_baseline.json
       continue-on-error: true
 
@@ -39,7 +39,7 @@ jobs:
     - name: Authenticate Snyk
       run: snyk auth ${SNYK_TOKEN}
 
-    - name: Run Snyk Code
+    - name: Run Snyk Code PR scan
       run: |
         sleep 10s
         snyk code test --json-file-output=${{ github.workspace }}/snyk_code_pr.json || true
